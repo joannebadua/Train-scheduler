@@ -7,7 +7,7 @@ var firebaseConfig = {
     messagingSenderId: "1032074531161",
     appId: "1:1032074531161:web:5835a66636caa31d"
   };
-  firebase.initializeApp(config);
+  firebase.initializeApp(firebaseConfig);
 
   var database = firebase.database();
 
@@ -16,20 +16,47 @@ var firebaseConfig = {
   var trainTime = '';
   var trainFreq = '';
 
-  // button for adding next train and then grabbing user input
-  $('submit').on('click', function(event){
-    event.preventDefault();
-    trainName = $('#train-name-input')
-    .val()
-    .trim();
-    destination = $('#destination-input') 
-    .val()
-    .trim();
-    firstTrain = $('#first-train-time-input')
-    .val()
-    .trim();
-    frequency = $('#frequency-input')
-    .val()
-    .trim();
-
+  function timer() {
+    var time = moment(moment()).format('HH:mm:ss a');
+    $('#timer').text(time, 1000);
   }
+  setInterval(timer);
+  
+  // button for adding next train and then grabbing user input
+  $('#submit-input').on('click', function(event){
+    event.preventDefault();
+    trainName = $('#name')
+    .val()
+    .trim();
+    destination = $('#destination') 
+    .val()
+    .trim();
+    firstTrain = $('#first')
+    .val()
+    .trim();
+    frequency = $('#frequency')
+    .val()
+    .trim();
+    var newTrain = {
+      trainName: trainName,
+      destination: destination,
+      firstTrain: firstTrain,
+      frequency: frequency
+    };
+    // console.log(newTrain)
+    // do the save on the firebase
+    database.ref().push(newTrain);
+  })
+// PART 2: Grab input from data base and stick on screen, happens when page load
+  database.ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
+    var firstTrainTime = moment(childSnapshot.val().firstTrain, 'hh:mm');
+    var minutesSinceFirstTrain = moment().diff(firstTrainTime, "minutes");
+console.log("minutesSinceFirstTrain", minutesSinceFirstTrain)
+  // appending
+var trainHtml = "<tr><th>"+childSnapshot.val().trainName+"</th><th>"+childSnapshot.val().destination+"</th><th>"+childSnapshot.val().firstTrain+"</th><th>"+childSnapshot.val().frequency+"</th></tr>"
+$("#tableInfo").append(trainHtml);
+  })
+
+  // PART 3: 
+

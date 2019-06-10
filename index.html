@@ -12,7 +12,10 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
-    </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <!-- Moment.js Reference -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+</head>
 <body>
     <!-- train banner -->
 <section>
@@ -20,6 +23,9 @@
         <section class="jumbotron text-center text-brown bg-white bg1">
 <div class ="primary-overlay pt-5">
     <h1 class="display-4 logo">Anytyme is Train Time</h1>
+            <!-- Timer starts here -->
+            <h5 class="float-right" id="timer"></h5>
+            <!-- Timer ends here -->
 </div>
         </section>
     </div>
@@ -39,6 +45,7 @@
     </thead>
 <!-- tableInfo will be dropped here -->
 <tbody id="tableInfo">
+    
     </tbody>
 <!-- End of tableInfo -->
 </table>
@@ -57,25 +64,30 @@
 
             <div class="form-group">
                 <label for="Train-name">Destination</label>
-                <input class="form-control" id="name" type="text">
+                <input class="form-control" id="destination" type="text">
             </div>
 
             <div class="form-group">
                 <label for="Train-name">First Train Time (HH:mm - military time)</label>
-                <input class="form-control" id="name" type="text">
+                <input class="form-control" id="first" type="text">
             </div>
 
             <div class="form-group">
                 <label for="Train-name">Frequency (min)</label>
-                <input class="form-control" id="name" type="text">
+                <input class="form-control" id="frequency" type="text">
             </div>
-
-            <button class="btn btn-primary" type="submit" id="submit-input">Submit</button>
-        </form>
+        </form>            
+        <button class="btn btn-primary" id="submit-input">Submit</button>
     </div>
 </div>
 </div>
 </table>
-<script type="text/javascript" src="assets/javascript/main.js"></script>
+  <!-- Firebase References -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <!-- JS File -->
+<script type="text/javascript" src="assets/js/app.js"></script>
+
+
 </body>
 </html>
