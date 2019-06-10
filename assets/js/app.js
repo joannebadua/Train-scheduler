@@ -16,4 +16,20 @@ var firebaseConfig = {
   var trainTime = '';
   var trainFreq = '';
 
-  
+  // button for adding next train and then grabbing user input
+  $('submit').on('click', function(event){
+    event.preventDefault();
+    trainName = $('#train-name-input')
+    .val()
+    .trim();
+    destination = $('#destination-input') 
+    .val()
+    .trim();
+    firstTrain = $('#first-train-time-input')
+    .val()
+    .trim();
+    frequency = $('#frequency-input')
+    .val()
+    .trim();
+
+  }
