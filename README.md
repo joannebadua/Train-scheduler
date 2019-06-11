@@ -15,7 +15,7 @@ Users from many different machines must be able to view same train times.
 Styling and theme tied with funkytown!
 
 ### Technology Used:
-* [Firebase] (https://hackernoon.com/introduction-to-firebase-218a23186cd7)
+* [Firebase](https://hackernoon.com/introduction-to-firebase-218a23186cd7)
 * [Javascript (JS)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [jQuery JS Library](https://developer.mozilla.org/en-US/docs/Glossary/jQuery)
 * [Hypertext Markup Language (HTML)](https://developer.mozilla.org/en-US/docs/Web/HTML)
