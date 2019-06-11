@@ -1,0 +1,20 @@
+body {
+    background-color: lightgrey;
+  }
+
+.header {
+    text-align: center;
+	height: 500px;
+	/* padding-top: 50px;
+    border-radius: 5px; */
+    background-color: royalblue;
+    color: gold; 
+}
+.primary-overlay {
+    
+}
+.table{
+    border-style: solid; 
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
