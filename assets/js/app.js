@@ -21,7 +21,7 @@ var firebaseConfig = {
     $('#timer').text(time, 1000);
   }
   setInterval(timer);
-  
+
   // button for adding next train and then grabbing user input
   $('#submit-input').on('click', function(event){
     event.preventDefault();
@@ -50,13 +50,18 @@ var firebaseConfig = {
 // PART 2: Grab input from data base and stick on screen, happens when page load
   database.ref().on("child_added", function(childSnapshot) {
     console.log(childSnapshot.val());
-    var firstTrainTime = moment(childSnapshot.val().firstTrain, 'hh:mm');
+    var firstTrainTime = moment(childSnapshot.val().firstTrain, 'hh:mm').subtract(1, "years");
     var minutesSinceFirstTrain = moment().diff(firstTrainTime, "minutes");
-console.log("minutesSinceFirstTrain", minutesSinceFirstTrain)
+    var timeApartRemainder = minutesSinceFirstTrain % frequency;
+    var minutesTillTrain = frequency - timeApartRemainder;
+// console.log("minutesSinceFirstTrain", minutesSinceFirstTrain)
+console.log("minutesTillTrain", minutesTillTrain)
+
   // appending
-var trainHtml = "<tr><th>"+childSnapshot.val().trainName+"</th><th>"+childSnapshot.val().destination+"</th><th>"+childSnapshot.val().firstTrain+"</th><th>"+childSnapshot.val().frequency+"</th></tr>"
+var trainHtml = "<tr><th>"+childSnapshot.val().trainName+"</th><th>"+childSnapshot.val().destination+"</th><th>"+childSnapshot.val().firstTrain+"</th><th>"+childSnapshot.val().frequency+"</th></tr>"+childSnapshot.val().minutesTillTrain+"</th></tr>"
 $("#tableInfo").append(trainHtml);
   })
 
-  // PART 3: 
+  // PART 3: see above
+
 
