@@ -1,7 +1,7 @@
 # Train-scheduler Firebase Assignment
 ![Screenshot](assets/images/screenshot-train-scheduler.png)
 
-##About
+## About
 Are you looking to take a train to Funkytown? 
 
 This train schedule application incorporates Firebase to host arrival and departure data, and will retrieve and manipulate this information with Moment.js. An up-to-date information about various trains, namely their arrival times and how many minutes remain until they arrive at their station, will be provided for the user.
@@ -22,10 +22,10 @@ Styling and theme tied with funkytown!
 * [Cascading Style Sheets (CSS)](https://developer.mozilla.org/en-US/docs/Web/CSS) 
 
 
-## Images and Music Credits
+### Images and Music Credits
 * Banner  - https://images.app.goo.gl/8YdF6eQLpEYNPFNaA
 
-###Author
+### Author
 * **Joey Badua** - [Train-scheduler](https://github.com/joannebadua)
 
 
