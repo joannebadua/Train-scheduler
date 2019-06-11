@@ -18,12 +18,13 @@
 </head>
 <body>
     <!-- train banner -->
-<section>
+    <div class="container"> 
+        <section> 
     <div class="header">
         <div class="header">
-    <img src="assets/images/futuristicnews-header.jpg">
     <div class ="primary-overlay pt-5">
-    <h1 class="display-4 logo">Anytyme is Train Time</h1>
+            <img src="assets/images/the-last-train-to-funkytown.jpeg">
+    <h1 class="display-4 logo">Party Train Schedule</h1>
             <!-- Timer starts here -->
             <h5 class="float-right" id="timer"></h5>
             <!-- Timer ends here -->
@@ -38,7 +39,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Train Time</th>
+            <th>Train Name</th>
             <th>Destination </th>
             <th>Frequency (min)</th>
             <th>Next Arrival</th>
@@ -46,7 +47,7 @@
         </tr>
     </thead>
 <!-- tableInfo will be dropped here -->
-<tbody id="tableInfo">
+<tbody class="current-train-schedule" id="tableInfo">
     
     </tbody>
 <!-- End of tableInfo -->
@@ -80,7 +81,9 @@
             </div>
         </form>            
         <button class="btn btn-primary" id="submit-input">Submit</button>
+        
     </div>
+</div>
 </div>
 </div>
 </table>
